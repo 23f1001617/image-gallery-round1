@@ -11,26 +11,26 @@
             padding: 20px;
             transition: background-color 0.3s, color 0.3s;
         }
+        .light {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .dark {
+            background-color: #333333;
+            color: #ffffff;
+        }
         .gallery {
             display: flex;
-            flex-wrap: wrap;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
-        .gallery-item {
-            width: 48%;
-            margin-bottom: 20px;
-        }
-        img {
-            max-width: 100%;
+        .gallery img {
+            max-width: 48%;
             border-radius: 8px;
         }
         .caption {
             text-align: center;
             margin-top: 5px;
-        }
-        .dark-mode {
-            background-color: #333;
-            color: #fff;
         }
         button {
             margin-bottom: 20px;
@@ -39,57 +39,26 @@
         }
     </style>
 </head>
-<body>
-
-<button id="toggle-theme">Toggle Theme</button>
-
-<div class="gallery" id="gallery"></div>
-
-<div id="error-message" style="color: red;"></div>
-
-<script>
-    const galleryData = [
-        {
-            url: "https://images.unsplash.com/photo-1601758123927-4b0b1f6f5b3a",
-            caption: "Beautiful Landscape"
-        },
-        {
-            url: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
-            caption: "Stunning Sunset"
-        }
-    ];
-
-    const galleryElement = document.getElementById('gallery');
-    const errorMessage = document.getElementById('error-message');
-
-    function renderGallery() {
-        galleryData.forEach(item => {
-            const div = document.createElement('div');
-            div.className = 'gallery-item';
-            div.innerHTML = `
-                <img src="${item.url}" alt="${item.caption}">
-                <div class="caption">${item.caption}</div>
-            `;
-            galleryElement.appendChild(div);
+<body class="light">
+    <button id="toggle-theme">Toggle Theme</button>
+    <div class="gallery">
+        <div>
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308" alt="Nature" />
+            <div class="caption">Beautiful Nature</div>
+        </div>
+        <div>
+            <img src="https://images.unsplash.com/photo-1521747116042-5a810fda9664" alt="City" />
+            <div class="caption">City Life</div>
+        </div>
+    </div>
+    <script>
+        const toggleButton = document.getElementById('toggle-theme');
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            document.body.classList.toggle('light');
         });
-    }
-
-    document.getElementById('toggle-theme').onclick = function() {
-        document.body.classList.toggle('dark-mode');
-    };
-
-    // Simulate fetching data
-    setTimeout(() => {
-        try {
-            renderGallery();
-        } catch (error) {
-            errorMessage.textContent = "Failed to load data.";
-        }
-    }, 100);
-
-</script>
-
-<!-- build-id: 2023-10-01T12:00:00Z -->
+    </script>
+    <!-- build-id: 2023-10-04T12:00:00Z -->
 </body>
 </html>
-<!-- build-id: 2025-10-16T12:11:14.093532 -->
+<!-- build-id: 2025-10-16T12:27:22.848392 -->
