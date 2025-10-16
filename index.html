@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Image Gallery</title>
+    <title>Image Gallery Round 1</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,54 +11,56 @@
             padding: 20px;
             transition: background-color 0.3s, color 0.3s;
         }
-        .light {
+        .light-theme {
             background-color: #ffffff;
             color: #000000;
         }
-        .dark {
+        .dark-theme {
             background-color: #333333;
             color: #ffffff;
         }
         .gallery {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             flex-wrap: wrap;
         }
         .gallery img {
-            max-width: 48%;
+            max-width: 100%;
             border-radius: 8px;
+            margin: 10px;
         }
         .caption {
             text-align: center;
             margin-top: 5px;
         }
         button {
-            margin-bottom: 20px;
+            margin: 20px 0;
             padding: 10px 15px;
             cursor: pointer;
         }
     </style>
 </head>
-<body class="light">
+<body class="light-theme">
+    <h1>Image Gallery Round 1</h1>
     <button id="toggle-theme">Toggle Theme</button>
     <div class="gallery">
         <div>
-            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308" alt="Nature" />
-            <div class="caption">Beautiful Nature</div>
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="A beautiful landscape" />
+            <div class="caption">A beautiful landscape</div>
         </div>
         <div>
-            <img src="https://images.unsplash.com/photo-1521747116042-5a810fda9664" alt="City" />
-            <div class="caption">City Life</div>
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="A serene lake" />
+            <div class="caption">A serene lake</div>
         </div>
     </div>
     <script>
         const toggleButton = document.getElementById('toggle-theme');
         toggleButton.addEventListener('click', () => {
-            document.body.classList.toggle('dark');
-            document.body.classList.toggle('light');
+            document.body.classList.toggle('dark-theme');
+            document.body.classList.toggle('light-theme');
         });
     </script>
-    <!-- build-id: 2023-10-04T12:00:00Z -->
+    <!-- build-id: 2023-10-01T12:00:00Z -->
 </body>
 </html>
-<!-- build-id: 2025-10-16T12:27:22.848392 -->
+<!-- build-id: 2025-10-16T12:39:05.273197 -->
